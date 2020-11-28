@@ -1,5 +1,8 @@
 import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Views/Home/Widgets/toy_card.dart';
+import 'package:NexToyMobile/Widgets/bottom_panel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -10,27 +13,47 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
+      appBar: buildAppBar(context),
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 2 / 3,
+        ),
+        itemBuilder: (context, index) {
+          return ToyCard();
+        },
+      ),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            color: context.theme.backgroundColor,
+          ),
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return BottomSheetPanelBody();
+              },
+            );
+          }),
+      title: Text(
+        "NexToy",
+        style: context.textTheme.headline5.copyWith(
+            color: context.theme.accentColor, fontWeight: FontWeight.bold),
+      ),
+      actions: [
+        IconButton(
             icon: Icon(
-              Icons.menu,
+              Icons.filter_list_outlined,
               color: context.theme.backgroundColor,
             ),
-            onPressed: () {}),
-        title: Text(
-          "NexToy",
-          style: context.textTheme.headline5.copyWith(
-              color: context.theme.accentColor, fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.filter_list_outlined,
-                color: context.theme.backgroundColor,
-              ),
-              onPressed: () {})
-        ],
-      ),
+            onPressed: () {})
+      ],
     );
   }
 }
