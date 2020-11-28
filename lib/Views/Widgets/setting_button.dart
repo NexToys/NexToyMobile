@@ -15,36 +15,24 @@ class SettingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: onPressed,
-      child: Container(
-        alignment: Alignment.center,
-        width: context.width * .2,
-        padding: EdgeInsets.symmetric(vertical: context.constLowValue),
-        decoration: bigSizeBorder
-            ? buildBoxDecorationHight(context)
-            : buildBoxDecorationLow(context),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      child: OutlineButton(
+        onPressed: onPressed,
+        highlightColor: Colors.black26,
+        shape: StadiumBorder(),
+        highlightedBorderColor: context.theme.backgroundColor,
+        borderSide: BorderSide(
+          color: context.theme.backgroundColor,
+          style: BorderStyle.solid,
+          width: bigSizeBorder == true ? 3.1 : 1.1,
+        ),
         child: Text(
           text,
           style: context.textTheme.bodyText1
               .copyWith(color: context.theme.backgroundColor),
         ),
       ),
-    );
-  }
-
-  BoxDecoration buildBoxDecorationHight(BuildContext context) {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(context.constMediumValue),
-      border: Border.all(width: 3, color: context.theme.backgroundColor),
-    );
-  }
-
-  BoxDecoration buildBoxDecorationLow(BuildContext context) {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(context.constMediumValue),
-      border: Border.all(
-          width: 1, color: context.theme.backgroundColor.withOpacity(.7)),
     );
   }
 }
