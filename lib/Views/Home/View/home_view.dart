@@ -64,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
     return OpenContainer(
       closedColor: context.theme.backgroundColor,
       closedElevation: 0,
-      transitionDuration: Duration(milliseconds: 500),
+      transitionDuration: Duration(milliseconds: 200),
       closedBuilder: (context, action) {
         return ToyCard(toy: toy);
       },

@@ -33,5 +33,5 @@ final toys = [
   Toy(
       name: "Bebek",
       desctription: "bu bir açıklamadır. Ciddiye almayın!!!",
-      image: "assets/image/oyun.jpg"),
+      image: "assets/image/oyuncak.jpg"),
 ];

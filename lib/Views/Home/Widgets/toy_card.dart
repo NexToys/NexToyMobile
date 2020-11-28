@@ -1,7 +1,8 @@
 import 'package:NexToyMobile/Core/Extension/context_extension.dart';
 import 'package:NexToyMobile/Views/Home/Model/toyModel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../Widgets/duckWidget.dart';
 
 class ToyCard extends StatelessWidget {
   final Toy toy;
@@ -13,15 +14,15 @@ class ToyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(bottom: 10, right: 5, left: 5),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           AspectRatio(
             aspectRatio: 1 / 1,
             child: Card(
-              elevation: 5,
-              shadowColor: context.theme.accentColor,
+              elevation: 8,
+              shadowColor: context.theme.accentColor.withOpacity(.7),
               shape: RoundedRectangleBorder(
                 side: BorderSide(
                     color: context.theme.accentColor.withOpacity(.1)),
@@ -41,13 +42,7 @@ class ToyCard extends StatelessWidget {
                     Radius.circular(20),
                   ),
                 ),
-                child: AspectRatio(
-                  aspectRatio: 1 / 1,
-                  child: SvgPicture.asset(
-                    "assets/svg/rubber-duck.svg",
-                    color: context.theme.accentColor.withOpacity(.1),
-                  ),
-                ),
+                child: Duck(),
               ),
             ),
           ),
@@ -56,13 +51,13 @@ class ToyCard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   AspectRatio(
                     aspectRatio: 1 / 1,
                     child: Card(
-                      elevation: 20,
-                      shadowColor: context.theme.accentColor,
+                      elevation: 10,
+                      shadowColor: context.theme.accentColor.withOpacity(.7),
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
                             color: context.theme.accentColor.withOpacity(.1)),

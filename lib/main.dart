@@ -8,8 +8,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Views/Home/Model/toyModel.dart';
-
 void main() {
   runApp(EasyLocalization(
       path: LanguageService.path,
