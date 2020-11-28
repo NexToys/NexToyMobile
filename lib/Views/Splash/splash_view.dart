@@ -1,9 +1,33 @@
+import 'dart:async';
+
 import 'package:NexToyMobile/Core/Constants/App/app_constanst.dart';
 import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
+import 'package:NexToyMobile/Views/Onboarding/View/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class OnboardingView extends StatelessWidget {
+class Splash extends StatefulWidget {
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  Timer _timer;
+  @override
+  void initState() {
+    _timer = Timer(Duration(seconds: 3), () {
+      NavigatorService().navigateToReplace(Onboarding());
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

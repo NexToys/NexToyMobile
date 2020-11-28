@@ -1,21 +1,26 @@
-import 'package:NexToyMobile/Core/Constants/App/app_constanst.dart';
-import 'package:NexToyMobile/Core/Localization/language_service.dart';
-import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
-import 'package:NexToyMobile/Core/Notifier/app_provider.dart';
-import 'package:NexToyMobile/Core/Notifier/theme_provider.dart';
-import 'package:NexToyMobile/Views/CustomNavBar/custom_nav_bar.dart';
-import 'package:NexToyMobile/Views/Onboarding/onboarding_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Core/Constants/App/app_constanst.dart';
+import 'Core/Localization/language_service.dart';
+import 'Core/Navigation/navigation_service.dart';
+import 'Core/Notifier/app_provider.dart';
+import 'Core/Notifier/theme_provider.dart';
+import 'Views/Splash/splash_view.dart';
+
 void main() {
-  runApp(EasyLocalization(
+  runApp(
+    EasyLocalization(
       path: LanguageService.path,
       supportedLocales: LanguageService().locales,
       saveLocale: true,
-      child:
-          MultiProvider(providers: AppProvider().providers, child: MyApp())));
+      child: MultiProvider(
+        providers: AppProvider().providers,
+        child: MyApp(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +34,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       navigatorKey: NavigatorService().navigatorKey,
       theme: Provider.of<ThemeProvider>(context).getTheme,
-      home: OnboardingView(),
+      home: Splash(),
     );
   }
 }
