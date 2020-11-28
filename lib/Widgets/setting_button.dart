@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import '../../Core/Extension/context_extension.dart';
+import '../Core/Extension/context_extension.dart';
 
 class SettingButton extends StatelessWidget {
   final bool bigSizeBorder;

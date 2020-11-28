@@ -1,14 +1,14 @@
 import 'package:NexToyMobile/Core/Constants/App/app_constanst.dart';
 import 'package:NexToyMobile/Core/Localization/language_service.dart';
 import 'package:NexToyMobile/Core/Notifier/theme_provider.dart';
-import 'package:NexToyMobile/Views/Widgets/setting_button.dart';
+import 'package:NexToyMobile/Widgets/setting_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../Core/Extension/context_extension.dart';
-import '../../Core/Extension/locale_extension.dart';
-import '../../Core/Extension/string_extension.dart';
+import '../Core/Extension/context_extension.dart';
+import '../Core/Extension/locale_extension.dart';
+import '../Core/Extension/string_extension.dart';
 
 class BottomSheetPanelBody extends StatelessWidget {
   const BottomSheetPanelBody({
