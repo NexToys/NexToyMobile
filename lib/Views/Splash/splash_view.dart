@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:NexToyMobile/Core/Constants/App/app_constanst.dart';
 import 'package:NexToyMobile/Core/Extension/context_extension.dart';
 import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
-import 'package:NexToyMobile/Views/Onboarding/View/splash_view.dart';
+import 'package:NexToyMobile/Views/Onboarding/View/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
