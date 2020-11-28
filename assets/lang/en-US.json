@@ -1,4 +1,6 @@
 {
   "DARK": "Dark",
-  "LIGHT": "Light"
+  "LIGHT": "Light",
+  "homepage":"Homepage",
+  "chat":"Chat"
 }

@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Duck extends StatelessWidget {
-  const Duck({
-    Key key,
-  }) : super(key: key);
+  final double opacity;
+  const Duck({Key key, this.opacity = 0.1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class Duck extends StatelessWidget {
       aspectRatio: 1 / 1,
       child: SvgPicture.asset(
         "assets/svg/rubber-duck.svg",
-        color: context.theme.accentColor.withOpacity(.1),
+        color: context.theme.accentColor.withOpacity(opacity),
       ),
     );
   }
