@@ -1,10 +1,13 @@
 import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Views/Home/Model/toyModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ToyCard extends StatelessWidget {
+  final Toy toy;
   const ToyCard({
     Key key,
+    this.toy,
   }) : super(key: key);
 
   @override
@@ -17,7 +20,7 @@ class ToyCard extends StatelessWidget {
           AspectRatio(
             aspectRatio: 1 / 1,
             child: Card(
-              elevation: 20,
+              elevation: 5,
               shadowColor: context.theme.accentColor,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -70,20 +73,20 @@ class ToyCard extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          "assets/image/oyuncak2.jpg",
+                          toy.image,
                           fit: BoxFit.fill,
                         ),
                       ),
                     ),
                   ),
                   Text(
-                    "OyuncakOyuncakOyuncak",
+                    toy.name,
                     maxLines: 1,
                     overflow: TextOverflow.visible,
                     style: context.textTheme.headline6,
                   ),
                   Text(
-                    "Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay Deray Detay ",
+                    toy.desctription,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   )
