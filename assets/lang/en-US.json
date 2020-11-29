@@ -15,6 +15,8 @@
   "loginButton":"Login",
   "registerButton":"Register",
   "or":"Or",
+  "password2":"Repeat Password",
+  "passNoMatch":"Passwords doesn't match!",
   
   "filter":"Filter",
   "confirm":"Confirm",

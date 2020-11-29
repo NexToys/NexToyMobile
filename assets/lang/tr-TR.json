@@ -15,6 +15,8 @@
   "loginButton":"Giriş Yap",
   "registerButton":"Kayıt ol",
   "or":"Ya da",
+  "password2":"Şifreyi Tekrarla",
+  "passNoMatch":"Şifreler uyuşmuyor!",
   
   "filter":"Filtre",
   "confirm":"Onayla",
