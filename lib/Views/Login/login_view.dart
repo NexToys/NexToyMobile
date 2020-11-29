@@ -1,10 +1,13 @@
-import 'package:NexToyMobile/Core/Extension/context_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../Components/duck_logo_with_text.dart';
 import '../../Components/fat_button.dart';
 import '../../Components/outline_text_field.dart';
+import '../../Core/Extension/context_extension.dart';
 import '../../Core/Extension/string_extension.dart';
+import '../../Core/Navigation/navigation_service.dart';
+import '../CustomNavBar/custom_nav_bar.dart';
+import '../Register/register_view.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -65,8 +68,8 @@ class _LoginState extends State<Login> {
                   text: "loginButton".locale,
                   onPressed: () {
                     if (_formKey.currentState.validate()) {
-                      _scaf.currentState.showSnackBar(
-                          SnackBar(content: Text("$_email $_password")));
+                      print("$_email $_password");
+                      NavigatorService().navigateToReplace(CustomNavBar());
                     } else {
                       setState(() {
                         _autoValidate = AutovalidateMode.always;
@@ -109,7 +112,9 @@ class _LoginState extends State<Login> {
         child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          NavigatorService().navigateTo(Register());
+        },
         child: Text(
           "registerText".locale,
           style: context.textTheme.subtitle2,

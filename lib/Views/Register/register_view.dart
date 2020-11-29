@@ -71,7 +71,7 @@ class _RegisterState extends State<Register> {
                   height: 10,
                 ),
                 FatButton(
-                  text: "loginButton".locale,
+                  text: "registerButton".locale,
                   onPressed: () {
                     if (_formKey.currentState.validate()) {
                       _scaf.currentState.showSnackBar(

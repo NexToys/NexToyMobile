@@ -1,4 +1,3 @@
-import 'package:NexToyMobile/Views/Register/register_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,7 @@ import 'Core/Localization/language_service.dart';
 import 'Core/Navigation/navigation_service.dart';
 import 'Core/Notifier/app_provider.dart';
 import 'Core/Notifier/theme_provider.dart';
+import 'Views/Splash/splash_view.dart';
 
 void main() {
   runApp(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       navigatorKey: NavigatorService().navigatorKey,
       theme: Provider.of<ThemeProvider>(context).getTheme,
-      home: Register(),
+      home: Splash(),
     );
   }
 }

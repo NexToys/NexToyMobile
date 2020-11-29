@@ -1,11 +1,12 @@
-import 'package:NexToyMobile/Core/Extension/context_extension.dart';
-import 'package:NexToyMobile/Core/Extension/string_extension.dart';
-import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
-import 'package:NexToyMobile/Views/CustomNavBar/custom_nav_bar.dart';
-import 'package:NexToyMobile/Views/Onboarding/Model/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../Core/Extension/context_extension.dart';
+import '../../../Core/Extension/string_extension.dart';
+import '../../../Core/Navigation/navigation_service.dart';
+import '../../Login/login_view.dart';
+import '../Model/onboarding_model.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -30,9 +31,9 @@ class _OnboardingState extends State<Onboarding> {
           return FloatingActionButton(
             onPressed: () {
               if (value == 2) {
-                NavigatorService().navigateToReplace(CustomNavBar());
+                NavigatorService().navigateToReplace(Login());
               } else {
-                _pageController.animateToPage(22,
+                _pageController.animateToPage(2,
                     duration: Duration(milliseconds: 250),
                     curve: Curves.linear);
               }
@@ -69,13 +70,14 @@ class _OnboardingState extends State<Onboarding> {
                     .toList(),
               )),
           Expanded(
-              flex: 1,
-              child: SmoothPageIndicator(
-                  controller: _pageController,
-                  count: onboarding.length,
-                  effect:
-                      WormEffect(activeDotColor: context.theme.primaryColor),
-                  onDotClicked: (index) {})),
+            flex: 1,
+            child: SmoothPageIndicator(
+              controller: _pageController,
+              count: onboarding.length,
+              effect: WormEffect(activeDotColor: context.theme.primaryColor),
+              onDotClicked: (index) {},
+            ),
+          ),
         ],
       ),
     );
