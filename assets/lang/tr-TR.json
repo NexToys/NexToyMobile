@@ -1,9 +1,37 @@
 {
+  "nexToy":"NexToy",
   "DARK": "Siyah",
   "LIGHT": "Acik",
   "homepage":"Anasayfa",
   "chat":"Sohbet",
+  
   "splashText1":"Çocuğunuz artık eski oyuncaklarını oynamıyor ve yenilerini mi istiyor? Ya da çocuğunuz artık büyüdü ve eski oyuncaklarından kar mı elde etmek istiyorsunuz?",
   "splashText2":"Artık istemediniz oyuncakların fotoğrafını yükleyip ilan oluşturun!",
-  "splashText3":"Diğer oyuncak ilanlarının sahipleriyle konuşup anlaşarak oyuncakları takas edebilirsiniz!"
+  "splashText3":"Diğer oyuncak ilanlarının sahipleriyle konuşup anlaşarak oyuncakları takas edebilirsiniz!",
+  
+  "passwordError":"Hay aksi! Şifreniz en az 6 karakter olmalı!",
+  "emailError":"E-posta stili hatalı!",
+  "registerText":"Hala kayıt olmadıysanız kayıt olmak için tıklayın!",
+  "loginButton":"Giriş Yap",
+  "registerButton":"Kayıt ol",
+  "or":"Ya da",
+  
+  "filter":"Filtre",
+  "confirm":"Onayla",
+  "settings":"Ayarlar",
+  "save":"Kaydet",
+  
+  "name":"İsim",
+  "surname":"Soyisim",
+  "email":"E-posta",
+  "password":"Şifre",
+  "bio":"Hakkında",
+  "username":"Kullanıcı Adı",
+  "rating":"Puan",
+  
+  "activeCheck":"İlan aktif",
+  "toyName":"Oyuncağın Adı",
+  "toyType":"Oyuncağın Türü",
+  "toyDesc":"Açıklama",
+  "toyImage":"Resim"
 }
