@@ -1,9 +1,37 @@
 {
+  "nexToy":"NexToy",
   "DARK": "Dark",
   "LIGHT": "Light",
   "homepage":"Homepage",
   "chat":"Chat",
+  
   "splashText1":"Does your child no longer play their old toys and want new ones? Or your child is now grown up and you want to profit from their old toys?",
   "splashText2":"Upload a photo of the toys you don't want anymore and create an ad!",
-  "splashText3":"You can exchange toys by talking to and agreeing with the owners of other toy ads!"
+  "splashText3":"You can exchange toys by talking to and agreeing with the owners of other toy ads!",
+  
+  "passwordError":"Oops! Your passwords should be longer than 6 characters!",
+  "emailError":"Wrong e-mail style!",
+  "registerText":"If you didn't register yet click here to register!",
+  "loginButton":"Login",
+  "registerButton":"Register",
+  "or":"Or",
+  
+  "filter":"Filter",
+  "confirm":"Confirm",
+  "settings":"Settings",
+  "save":"Save",
+  
+  "name":"Name",
+  "surname":"Surname",
+  "email":"E-mail",
+  "password":"Password",
+  "bio":"About you",
+  "username":"Username",
+  "rating":"Rating",
+  
+  "activeCheck":"Active",
+  "toyName":"Toys name",
+  "toyType":"Toys type",
+  "toyDesc":"Description",
+  "toyImage":"Picture"
 }

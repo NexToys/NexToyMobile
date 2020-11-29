@@ -1,8 +1,10 @@
-import 'package:NexToyMobile/Core/Extension/context_extension.dart';
-import 'package:NexToyMobile/Views/Home/Model/toyModel.dart';
-import 'package:NexToyMobile/Widgets/duckWidget.dart';
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
+
+import '../../../Components/duckWidget.dart';
+import '../../../Core/Extension/context_extension.dart';
+import '../../Home/Model/toyModel.dart';
 
 class DetailView extends StatefulWidget {
   final Toy toy;

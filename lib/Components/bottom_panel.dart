@@ -1,7 +1,7 @@
+import 'package:NexToyMobile/Components/setting_button.dart';
 import 'package:NexToyMobile/Core/Constants/App/app_constanst.dart';
 import 'package:NexToyMobile/Core/Localization/language_service.dart';
 import 'package:NexToyMobile/Core/Notifier/theme_provider.dart';
-import 'package:NexToyMobile/Widgets/setting_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

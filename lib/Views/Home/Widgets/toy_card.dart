@@ -1,8 +1,8 @@
-import 'package:NexToyMobile/Core/Extension/context_extension.dart';
-import 'package:NexToyMobile/Views/Home/Model/toyModel.dart';
 import 'package:flutter/material.dart';
 
-import '../../../Widgets/duckWidget.dart';
+import '../../../Components/duckWidget.dart';
+import '../../../Core/Extension/context_extension.dart';
+import '../Model/toyModel.dart';
 
 class ToyCard extends StatelessWidget {
   final Toy toy;
