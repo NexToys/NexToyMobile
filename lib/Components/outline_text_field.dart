@@ -7,6 +7,8 @@ class OutlineTextField extends StatelessWidget {
   final Function(String data) validator;
   final bool obscureText;
   final String labelText;
+  final int maxLines;
+  final int minLines;
 
   const OutlineTextField({
     Key key,
@@ -15,6 +17,8 @@ class OutlineTextField extends StatelessWidget {
     this.validator,
     this.labelText,
     this.obscureText = false,
+    this.maxLines = 1,
+    this.minLines = 1,
   }) : super(key: key);
 
   @override
@@ -24,6 +28,8 @@ class OutlineTextField extends StatelessWidget {
       validator: validator,
       obscureText: obscureText,
       onChanged: onChanged,
+      maxLines: maxLines,
+      minLines: minLines,
       cursorColor: context.theme.accentColor,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
