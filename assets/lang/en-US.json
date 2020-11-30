@@ -35,5 +35,6 @@
   "toyName":"Toys name",
   "toyType":"Toys type",
   "toyDesc":"Description",
-  "toyImage":"Picture"
+  "toyImage":"Add Image",
+  "nullField":"This Field Cannot Be Empty!"
 }

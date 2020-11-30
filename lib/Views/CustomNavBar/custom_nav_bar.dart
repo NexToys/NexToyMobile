@@ -1,3 +1,5 @@
+import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
+import 'package:NexToyMobile/Views/AddingToys/adding_toys_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -30,7 +32,9 @@ class _CustomNavBarState extends State<CustomNavBar> {
     return FloatingActionButton(
       backgroundColor: context.theme.primaryColor,
       child: Icon(Icons.add),
-      onPressed: () {},
+      onPressed: () {
+        NavigatorService().navigateTo(AddingToysView());
+      },
     );
   }
 

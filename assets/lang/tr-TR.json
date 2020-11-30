@@ -35,5 +35,6 @@
   "toyName":"Oyuncağın Adı",
   "toyType":"Oyuncağın Türü",
   "toyDesc":"Açıklama",
-  "toyImage":"Resim"
+  "toyImage":"Resim Ekle",
+  "nullField":"Bu Alan Boş Geçilemez!"
 }
