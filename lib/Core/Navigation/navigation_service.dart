@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class NavigatorService {
+  static NavigatorService _instance = NavigatorService._internal();
+  static NavigatorService get instance => _instance;
+  /*
   static NavigatorService _singleton = NavigatorService._internal();
   factory NavigatorService() {
     return _singleton;
-  }
+  }*/
 
   NavigatorService._internal();
 

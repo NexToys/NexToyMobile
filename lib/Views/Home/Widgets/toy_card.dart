@@ -81,7 +81,7 @@ class ToyCard extends StatelessWidget {
                     style: context.textTheme.headline6,
                   ),
                   Text(
-                    toy.desctription,
+                    toy.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   )

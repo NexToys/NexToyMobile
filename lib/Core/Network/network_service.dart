@@ -11,10 +11,16 @@ import 'Response/IResponse_model.dart';
 import 'Response/response_model.dart';
 
 class NetworkService {
-  static NetworkService _singleton = NetworkService._internal();
+  static NetworkService _instance;
+  static NetworkService get instance {
+    if (_instance == null) _instance = NetworkService._internal();
+    return _instance;
+  }
+
+  /*static NetworkService _singleton = NetworkService._internal();
   factory NetworkService() {
     return _singleton;
-  }
+  }*/
 
   NetworkService._internal();
 
