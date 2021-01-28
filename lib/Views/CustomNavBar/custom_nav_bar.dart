@@ -3,11 +3,11 @@ import 'package:NexToyMobile/Views/AddingToys/adding_toys_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../Components/bottom_panel.dart';
-import '../../Core/Extension/context_extension.dart';
-import '../../Core/Extension/string_extension.dart';
-import '../Chat/chat_view.dart';
-import '../Home/View/home_view.dart';
+import 'package:NexToyMobile/Components/bottom_panel.dart';
+import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Core/Extension/string_extension.dart';
+import 'package:NexToyMobile/Views/Chat/chat_view.dart';
+import 'package:NexToyMobile/Views/Home/View/home_view.dart';
 
 class CustomNavBar extends StatefulWidget {
   @override
