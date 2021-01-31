@@ -1,13 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-
-import 'package:NexToyMobile/Components/globals.dart';
 import 'package:NexToyMobile/Components/duck_logo_with_text.dart';
 import 'package:NexToyMobile/Components/fat_button.dart';
 import 'package:NexToyMobile/Components/outline_text_field.dart';
 import 'package:NexToyMobile/Core/Extension/string_extension.dart';
-import 'package:NexToyMobile/Core/Model/User/userModel.dart';
 import 'package:NexToyMobile/Components/globals.dart' as global;
 import 'package:http/http.dart' as http;
 
