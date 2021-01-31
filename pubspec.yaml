@@ -37,7 +37,8 @@ dependencies:
   lottie: ^0.7.0+1
   smooth_page_indicator: ^0.2.0
   image_picker: ^0.6.7+14
-  
+  firebase_storage: ^4.0.0
+  firebase_core: ^0.5.0
 
 dev_dependencies:
   flutter_test:

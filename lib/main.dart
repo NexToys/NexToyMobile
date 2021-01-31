@@ -8,8 +8,11 @@ import 'Core/Navigation/navigation_service.dart';
 import 'Core/Notifier/app_provider.dart';
 import 'Core/Notifier/theme_provider.dart';
 import 'Views/Splash/splash_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     EasyLocalization(
       path: LanguageService.path,

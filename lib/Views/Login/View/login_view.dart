@@ -1,13 +1,18 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
-import '../../Components/duck_logo_with_text.dart';
-import '../../Components/fat_button.dart';
-import '../../Components/outline_text_field.dart';
-import '../../Core/Extension/context_extension.dart';
-import '../../Core/Extension/string_extension.dart';
-import '../../Core/Navigation/navigation_service.dart';
-import '../CustomNavBar/custom_nav_bar.dart';
-import '../Register/register_view.dart';
+import 'package:NexToyMobile/Components/duck_logo_with_text.dart';
+import 'package:NexToyMobile/Components/fat_button.dart';
+import 'package:NexToyMobile/Components/outline_text_field.dart';
+import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Core/Extension/string_extension.dart';
+import 'package:NexToyMobile/Core/Navigation/navigation_service.dart';
+import 'package:NexToyMobile/Views/CustomNavBar/custom_nav_bar.dart';
+import 'package:NexToyMobile/Views/Register/register_view.dart';
+import 'package:NexToyMobile/Core/Model/User/userModel.dart';
+import 'package:http/http.dart' as http;
+import 'package:NexToyMobile/Components/globals.dart' as global;
 
 class Login extends StatefulWidget {
   @override
@@ -18,7 +23,17 @@ class _LoginState extends State<Login> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   GlobalKey<ScaffoldState> _scaf = GlobalKey<ScaffoldState>();
   AutovalidateMode _autoValidate = AutovalidateMode.disabled;
-  String _email, _password;
+  String _email = "", _password = "", status = '201';
+  User activeUser;
+  Map jsonBody;
+
+  Future postData() async {
+    final response = await http.post(global.baseUrl + '/api/user/signin',
+        body: <String, String>{"email": _email, "password": _password});
+    status = response.statusCode.toString();
+    jsonBody = jsonDecode(response.body);
+    //print(jsonBody);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +71,9 @@ class _LoginState extends State<Login> {
                 OutlineTextField(
                   labelText: "password".locale,
                   onChanged: (data) => _password = data,
-                  validator: (data) =>
-                      data.length >= 6 ? null : "passwordError".locale,
+                  validator: (data) => data != null
+                      ? (data.length >= 8 ? null : "passwordError".locale)
+                      : "passwordError".locale,
                   keyboardType: TextInputType.multiline,
                   obscureText: true,
                 ),
@@ -67,13 +83,26 @@ class _LoginState extends State<Login> {
                 FatButton(
                   text: "loginButton".locale,
                   onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      print("$_email $_password");
-                      NavigatorService().navigateToReplace(CustomNavBar());
+                    if (_email.length > 0 || _password.length > 0) {
+                      postData();
+                      if (status == '200') {
+                        if (_formKey.currentState.validate()) {
+                          print("$_email $_password");
+                          final aUser = User.fromJson(jsonBody);
+                          global.activeUser = aUser;
+                          NavigatorService().navigateToReplace(CustomNavBar());
+                        } else {
+                          setState(() {
+                            _autoValidate = AutovalidateMode.always;
+                          });
+                        }
+                      } else {
+                        _scaf.currentState.showSnackBar(
+                            SnackBar(content: Text("loginFail".locale)));
+                      }
                     } else {
-                      setState(() {
-                        _autoValidate = AutovalidateMode.always;
-                      });
+                      _scaf.currentState.showSnackBar(
+                          SnackBar(content: Text("fieldsEmpty".locale)));
                     }
                   },
                 ),

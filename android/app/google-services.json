@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225140206082",
+    "project_id": "nextoys-app",
+    "storage_bucket": "nextoys-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225140206082:android:829b5898be31f3d0dd551b",
+        "android_client_info": {
+          "package_name": "com.selcuk.nextoys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225140206082-o71iophdh2omofn59nf1u3orkgmjb99s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_3RN5r9L4hny-fAFd5hlJUh-dBudc-Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225140206082-o71iophdh2omofn59nf1u3orkgmjb99s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

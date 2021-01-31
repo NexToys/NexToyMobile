@@ -2,9 +2,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import '../../../Components/duckWidget.dart';
-import '../../../Core/Extension/context_extension.dart';
-import '../../Home/Model/toyModel.dart';
+import 'package:NexToyMobile/Components/duckWidget.dart';
+import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Core/Model/Toy/toyModel.dart';
 
 class DetailView extends StatefulWidget {
   final Toy toy;
@@ -32,8 +32,8 @@ class _DetailViewState extends State<DetailView> {
                     child: SizedBox(
                       width: context.width,
                       height: context.height * .6,
-                      child: Image.asset(
-                        widget.toy.image,
+                      child: Image.network(
+                        widget.toy.imageurl,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -67,7 +67,7 @@ class _DetailViewState extends State<DetailView> {
                             style: context.textTheme.headline6,
                           ),
                           Text(
-                            widget.toy.desctription,
+                            widget.toy.description,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           )

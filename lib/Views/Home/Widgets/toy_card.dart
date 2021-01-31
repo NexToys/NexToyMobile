@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../Components/duckWidget.dart';
-import '../../../Core/Extension/context_extension.dart';
-import '../Model/toyModel.dart';
+import 'package:NexToyMobile/Components/duckWidget.dart';
+import 'package:NexToyMobile/Core/Extension/context_extension.dart';
+import 'package:NexToyMobile/Core/Model/Toy/toyModel.dart';
 
 class ToyCard extends StatelessWidget {
   final Toy toy;
@@ -10,7 +10,6 @@ class ToyCard extends StatelessWidget {
     Key key,
     this.toy,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,8 +66,8 @@ class ToyCard extends StatelessWidget {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          toy.image,
+                        child: Image.network(
+                          toy.imageurl,
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -81,7 +80,7 @@ class ToyCard extends StatelessWidget {
                     style: context.textTheme.headline6,
                   ),
                   Text(
-                    toy.desctription,
+                    toy.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   )
